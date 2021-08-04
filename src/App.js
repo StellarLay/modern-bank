@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Sidebar from './components/sidebar/sidebar';
+import Overview from './components/overview/main';
+import Modal from './components/modal';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(true);
+  var statusLogin = (value) => { setIsLogin(value); }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar statusLogin={statusLogin} />
+      <Overview statusLogin={isLogin} changeLogin={statusLogin} />
     </div>
   );
 }

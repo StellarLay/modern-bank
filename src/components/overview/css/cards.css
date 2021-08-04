@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.cards-block {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.cards-block__options {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards-block__title {
+  font-size: 1.2em;
+  color: rgba(0, 0, 0, 0.726);
+  transition: 0.2s linear;
+}
+
+.cards-block__main {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: 0.2s linear;
+}
+
+.icons-card__arrow {
+  padding-left: 8px;
+  padding-top: 2px;
+  color: #5462d8;
+  font-size: 1.2em;
+}
+
+.cards-block__add-text {
+  cursor: pointer;
+  color: #5462d8;
+  transition: 0.2s linear;
+}
+
+.cards-block__add-text:hover {
+  color: #434eb9;
+  transition: 0.2s linear;
+}
+
+.cards-block__add-text:active {
+  transform: scale(0.9);
+}
+
+.cards-block__card {
+  position: relative;
+  z-index: 1111;
+  width: 300px;
+  height: 190px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: linear-gradient(0.25turn, #697bd8, #7486dd, #a1adee);
+  -webkit-box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+}
+
+.cards-block__name {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.icons-card__wifi {
+  transform: rotate(90deg);
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cards-block__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBalance-value {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+  margin-top: -5px;
+}
+
+.ValidAndLogo-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ValidAndLogo-block div:first-child {
+  display: flex;
+  flex-direction: column;
+  line-height: 18px;
+}
+
+.valid-title {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.valid-text {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+}
+
+.number-card {
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.second-card {
+  cursor: pointer;
+  background: none;
+  background-color: rgba(255, 255, 255, 0.945);
+  position: relative;
+  z-index: 11;
+  margin-top: -5px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s linear;
+  -webkit-box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 7px 14px -2px rgba(34, 60, 80, 0.2);
+}
+
+.second-card .ValidAndLogo-block {
+  display: flex;
+  height: 38px;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.second-card .number-card {
+  color: rgba(0, 0, 0, 0.671);
+  margin: 0;
+}
+
+.second-card .cardBalance-value {
+  color: rgba(0, 0, 0, 0.671);
+  margin: 0;
+}
+
+.second-card:last-child {
+  z-index: 1;
+}
+
+.second-card:hover {
+  -webkit-box-shadow: 0px 7px 14px -2px rgba(49, 133, 197, 0.5);
+  -moz-box-shadow: 0px 7px 14px -2px rgba(49, 133, 197, 0.5);
+  box-shadow: 0px 7px 14px -2px rgba(49, 133, 197, 0.5);
+  transition: 0.2s linear;
+}
+
+.focused {
+  z-index: 11111;
+}
+
+.order {
+  order: -1;
+  margin-top: 40px !important;
+  background: none !important;
+  background: linear-gradient(0.25turn, #697bd8, #7486dd, #a1adee) !important;
+}
+
+.order * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.cards-block__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  /* opacity: 1; */
+  margin-top: -50px;
+  transition: margin-top 300ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  /* opacity: 0; */
+  transition: opacity 300ms ease-in;
+}
+
+.cards-block__main:hover .cards-block__title {
+  color: #5462d8;
+  transition: 0.2s linear;
+}
+
+.cards-block__main:active {
+  transform: scale(0.95);
+  transition: 0.2s linear;
+}
+
+.cardSort-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.cardSort-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.cardSort-exit {
+  opacity: 1;
+}
+
+.cardSort-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

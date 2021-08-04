@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.overview-block {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  background-color: #f2f5fa;
+}
+
+.overview-block__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+  background-color: #f2f5fa;
+}
+
+.overview-title {
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.726);
+}
+
+.user-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-panel {
+  color: rgba(0, 0, 0, 0.582);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.2s linear;
+  padding-right: 35px;
+}
+
+.icons-panel:hover {
+  color: rgba(0, 0, 0, 0.822);
+  transition: 0.2s linear;
+}
+
+.signIn-btn {
+  cursor: pointer;
+  width: 120px;
+  height: 32px;
+  border: 1px solid #6679d6;
+  border-radius: 7px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.747);
+  transition: 0.2s linear;
+}
+
+.signIn-btn:hover {
+  background-color: #6679d6;
+  color: rgba(255, 255, 255, 0.897);
+  transition: 0.2s linear;
+}
+
+.signIn-btn:active {
+  transform: scale(0.9);
+}
+
+.isLogin-block {
+  display: flex;
+  align-items: center;
+}
+
+.image-block {
+  width: 35px;
+  height: 35px;
+  background-color: #6679d6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.884);
+}
+
+.isLogin-name {
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.isLogin-name:hover {
+  color: #6679d6;
+  transition: 0.2s linear;
+}
+
+.balanceCard-block {
+  overflow: auto;
+  max-height: 100vh;
+  width: 350px;
+  border-right: 2px solid #c9d0eb44;
+}
