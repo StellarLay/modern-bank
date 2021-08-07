@@ -10,21 +10,8 @@ import AddCard from './addCard';
 
 var Cards = (props) => {
     const cards = [
-        { id: 1, balance: 250000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa },
-        { id: 2, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard },
-        { id: 3, balance: 50000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa },
-        { id: 4, balance: 230000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa },
-        { id: 5, balance: 10000, number: "4255 0102 0074 4345", validThru: "04/22", logo: mastercard },
-        { id: 6, balance: 230000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa }
-    ];
-
-    const cardStyle = [
-        { zIndex: 6 },
-        { zIndex: 5 },
-        { zIndex: 4 },
-        { zIndex: 3 },
-        { zIndex: 2 },
-        { zIndex: 1 }
+        { id: 1, balance: 250000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa, zIndex: 20 },
+        { id: 2, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 19 }
     ];
 
     const sort = [
@@ -35,15 +22,20 @@ var Cards = (props) => {
     const [isSort, setIsSort] = useState(true);
     const [id, setId] = useState(1);
     const [list, setList] = useState(cards);
+    const [isAdd, setIsAdd] = useState(false);
 
     const listItem = list.find(i => i.id === id);
     const listFiltered = list.filter(i => i.id !== id);
 
-    var totalBalance = cards.reduce(function (prev, cur) { return prev + cur.balance; }, 0);
-    props.totalSum(totalBalance);
+    var totalBalance = list.reduce(function (prev, cur) { return prev + cur.balance; }, 0);
 
+    // Подгрузим баланс
+    useEffect(() => { props.totalSum(totalBalance); });
+
+    var closeAddCard = () => { setIsAdd(false) }
     var focusedCard = (e, i) => { setId(i) }
     var clickSort = () => { isSort ? setIsSort(false) : setIsSort(true); }
+    var getCardData = (value) => { setList([...list, value]); };
 
     return (
         <div className="cards-block">
@@ -54,10 +46,10 @@ var Cards = (props) => {
                         <FontAwesomeIcon key={i} className="icons-card__arrow" icon={sortIcon.arrow} />
                     ))}
                 </div>
-                <span className="cards-block__add-text">Добавить новую</span>
+                <span className="cards-block__add-text" onClick={() => setIsAdd(true)}>Добавить новую</span>
             </div>
             <div className="cards-block__list">
-                <div className="cards-block__card">
+                <div className="cards-block__card" style={{ zIndex: listItem.zIndex }}>
                     <div className="cards-block__header">
                         <span className="cards-block__name">Баланс</span>
                         <FontAwesomeIcon className="icons-card__wifi" icon={faWifi} />
@@ -85,7 +77,7 @@ var Cards = (props) => {
                                 timeout={300}
                                 classNames="item"
                             >
-                                <div key={card.id} className="cards-block__card second-card" style={cardStyle[i - 1]} onClick={(e) => focusedCard(e, card.id)}>
+                                <div key={card.id} className="cards-block__card second-card" style={{ zIndex: card.zIndex }} onClick={(e) => focusedCard(e, card.id)}>
                                     <span className="cardBalance-value">{card.balance} руб.</span>
                                     <div className="ValidAndLogo-block">
                                         <img src={card.logo} width="40" />
@@ -98,7 +90,14 @@ var Cards = (props) => {
                     </TransitionGroup>
                 </CSSTransition>
             </div>
-            <AddCard />
+            <CSSTransition
+                in={isAdd}
+                timeout={300}
+                unmountOnExit
+                classNames="cardSort"
+            >
+                <AddCard formdata={getCardData} countCards={list.length} countZindex={list[list.length - 1].zIndex} checkClose={closeAddCard} />
+            </CSSTransition>
         </div>
     )
 }

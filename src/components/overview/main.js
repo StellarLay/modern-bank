@@ -54,13 +54,15 @@ function Overview(props) {
                     />
                 </CSSTransition>
             </div>
-            <div className="content-block">
-                <div className="balanceCard-block">
-                    <Balance balance={balance} />
-                    <Cards totalSum={totalBalance} />
+            {!isLogin ? <h1 className="notLogin-text">Необходимо войти в аккаунт!</h1> :
+                <div className="content-block">
+                    <div className="balanceCard-block">
+                        <Balance balance={balance} />
+                        <Cards totalSum={totalBalance} />
+                    </div>
+                    <div className="stats-block"></div>
                 </div>
-                <div className="stats-block"></div>
-            </div>
+            }
         </div>
     );
 }

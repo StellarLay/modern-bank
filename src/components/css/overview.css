@@ -100,3 +100,13 @@
   width: 350px;
   border-right: 2px solid #c9d0eb44;
 }
+
+.notLogin-text {
+  color: rgba(0, 0, 0, 0.671);
+  font-size: 2em;
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%);
+  bottom: 0;
+  top: 50%;
+}
