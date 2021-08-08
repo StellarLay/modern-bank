@@ -5,7 +5,7 @@
 
 .overview-block {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0 40px;
@@ -96,8 +96,8 @@
 
 .balanceCard-block {
   overflow: auto;
-  max-height: 100vh;
-  width: 350px;
+  height: 100%;
+  width: 520px;
   border-right: 2px solid #c9d0eb44;
 }
 
@@ -109,4 +109,12 @@
   transform: translateX(-50%);
   bottom: 0;
   top: 50%;
+}
+
+.content-block {
+  overflow: hidden;
+  margin-top: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
 }

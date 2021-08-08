@@ -11,7 +11,7 @@ var Login = (props) => {
 
     var clickClose = () => { props.isClose(false); }
     var clickLogin = () => {
-        if (username === "" || password === "") {
+        if (username.trim() === "" || password.trim() === "") {
             setError(true);
         }
         else {

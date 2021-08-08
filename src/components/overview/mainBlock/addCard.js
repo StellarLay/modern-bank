@@ -47,9 +47,9 @@ var AddCard = (props) => {
 
     // check valid input values
     useEffect(() => {
-        firstname === "" ||
-            lastname === "" ||
-            middlename === "" ||
+        firstname.trim() === "" ||
+            lastname.trim() === "" ||
+            middlename.trim() === "" ||
             numberCard.length !== 19
             ? setIsDesabledBtn(true) : setIsDesabledBtn(false);
     });
@@ -83,15 +83,15 @@ var AddCard = (props) => {
                 <div className="personal-block">
                     <div className="personal-fInputs">
                         <label>Фамилия*</label>
-                        <input type="text" placeholder="Иванов" value={lastname} onChange={(e) => setLastname(e.target.value)} className={lastname === "" ? "error-input" : ""} />
+                        <input type="text" placeholder="Иванов" value={lastname} onChange={(e) => setLastname(e.target.value)} className={lastname.trim() === "" ? "error-input" : ""} />
                     </div>
                     <div className="personal-nInputs">
                         <label>Имя*</label>
-                        <input type="text" placeholder="Иван" value={firstname} onChange={(e) => setFirstname(e.target.value)} className={firstname === "" ? "error-input" : ""} />
+                        <input type="text" placeholder="Иван" value={firstname} onChange={(e) => setFirstname(e.target.value)} className={firstname.trim() === "" ? "error-input" : ""} />
                     </div>
                     <div className="personal-mInputs">
                         <label>Отчество*</label>
-                        <input type="text" placeholder="Иванович" value={middlename} onChange={(e) => setMiddlename(e.target.value)} className={middlename === "" ? "error-input" : ""} />
+                        <input type="text" placeholder="Иванович" value={middlename} onChange={(e) => setMiddlename(e.target.value)} className={middlename.trim() === "" ? "error-input" : ""} />
                     </div>
                 </div>
             </div>

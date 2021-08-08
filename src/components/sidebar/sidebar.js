@@ -59,7 +59,7 @@ function Sidebar(props) {
                 <Modal isActive={OpenCloseModal} isLogin={isLogin} />
             </CSSTransition>
             <div className="sidebar__top-block">
-                <h1 className="sidebar-title"><a href="/" className="sidebar-title">Modern<span>bank</span></a></h1>
+                <h1 className="sidebar-title"><a href="/modern-bank" className="sidebar-title">Modern<span>bank</span></a></h1>
                 <nav className="sidebar-menu">
                     <ul className="sidebar-menu__inner">
                         {menu.map((step, i) => (

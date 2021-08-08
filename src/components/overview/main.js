@@ -7,10 +7,11 @@ import { faSearch, faBell } from '@fortawesome/free-solid-svg-icons';
 import Login from '../login/login';
 import Balance from './mainBlock/balance';
 import Cards from './mainBlock/cards';
+import Stats from './statisticsBlock/main';
 
 function Overview(props) {
     const [isStatusLogin, setIsStatusLogin] = useState(false);
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
     const [username, setUsername] = useState("none");
     const [balance, setBalance] = useState(0);
 
@@ -60,7 +61,7 @@ function Overview(props) {
                         <Balance balance={balance} />
                         <Cards totalSum={totalBalance} />
                     </div>
-                    <div className="stats-block"></div>
+                    <Stats />
                 </div>
             }
         </div>
