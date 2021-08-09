@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/modern-bank/static/css/main.1d8922ef.chunk.css",
+    "main.css": "/modern-bank/static/css/main.100c6ee0.chunk.css",
     "main.js": "/modern-bank/static/js/main.af846e73.chunk.js",
     "main.js.map": "/modern-bank/static/js/main.af846e73.chunk.js.map",
     "runtime-main.js": "/modern-bank/static/js/runtime-main.27572891.js",
@@ -8,7 +8,7 @@
     "static/js/2.6cf017af.chunk.js": "/modern-bank/static/js/2.6cf017af.chunk.js",
     "static/js/2.6cf017af.chunk.js.map": "/modern-bank/static/js/2.6cf017af.chunk.js.map",
     "index.html": "/modern-bank/index.html",
-    "static/css/main.1d8922ef.chunk.css.map": "/modern-bank/static/css/main.1d8922ef.chunk.css.map",
+    "static/css/main.100c6ee0.chunk.css.map": "/modern-bank/static/css/main.100c6ee0.chunk.css.map",
     "static/js/2.6cf017af.chunk.js.LICENSE.txt": "/modern-bank/static/js/2.6cf017af.chunk.js.LICENSE.txt",
     "static/media/mastercard.b720e3b5.svg": "/modern-bank/static/media/mastercard.b720e3b5.svg",
     "static/media/mir.59c0eb22.svg": "/modern-bank/static/media/mir.59c0eb22.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.27572891.js",
     "static/js/2.6cf017af.chunk.js",
-    "static/css/main.1d8922ef.chunk.css",
+    "static/css/main.100c6ee0.chunk.css",
     "static/js/main.af846e73.chunk.js"
   ]
 }
