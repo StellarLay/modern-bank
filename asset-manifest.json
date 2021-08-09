@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/modern-bank/static/css/main.9d17f137.chunk.css",
-    "main.js": "/modern-bank/static/js/main.c36fc011.chunk.js",
-    "main.js.map": "/modern-bank/static/js/main.c36fc011.chunk.js.map",
+    "main.js": "/modern-bank/static/js/main.a2024d36.chunk.js",
+    "main.js.map": "/modern-bank/static/js/main.a2024d36.chunk.js.map",
     "runtime-main.js": "/modern-bank/static/js/runtime-main.27572891.js",
     "runtime-main.js.map": "/modern-bank/static/js/runtime-main.27572891.js.map",
     "static/js/2.6cf017af.chunk.js": "/modern-bank/static/js/2.6cf017af.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.27572891.js",
     "static/js/2.6cf017af.chunk.js",
     "static/css/main.9d17f137.chunk.css",
-    "static/js/main.c36fc011.chunk.js"
+    "static/js/main.a2024d36.chunk.js"
   ]
 }
