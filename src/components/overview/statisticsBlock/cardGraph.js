@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
+import Graphyc from './graph';
 
 var Graph = (props) => {
     const customStyles = {
@@ -62,13 +63,23 @@ var Graph = (props) => {
         })
     }
 
-    const options = [
-        { value: '••••4345', label: '••••4345' },
-        { value: '••••4345', label: '••••5275' },
-        { value: '••••4345', label: '••••7843' }
-    ]
+    const [selectOptions, setSelectOptions] = useState([]);
+    const [currentOption, setCurrentOption] = useState([]);
 
-    const [selectedOption, setSelectedOption] = useState(options[0]);
+    useEffect(() => {
+        if (props.getCards.length > selectOptions.length) {
+            const options = [];
+
+            for (let i = 0; i < props.getCards.length; i++) {
+                options[i] = {
+                    value: '••••' + props.getCards[i].number.substr(props.getCards[i].number.length - 4),
+                    label: '••••' + props.getCards[i].number.substr(props.getCards[i].number.length - 4)
+                }
+            }
+            setSelectOptions(options);
+            setCurrentOption(options[0]);
+        }
+    });
 
     return (
         <div className="graph-block">
@@ -77,10 +88,10 @@ var Graph = (props) => {
                     <h2 className="graph-block__title">Статистика для</h2>
                     <Select
                         className="select-block"
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
+                        onChange={setCurrentOption}
                         styles={customStyles}
-                        options={options}
+                        options={selectOptions}
+                        value={currentOption}
                     />
                 </div>
                 <div className="graph-block__header-right">
@@ -90,6 +101,21 @@ var Graph = (props) => {
                     <span className="graph-block__filter">Год</span>
                 </div>
             </div>
+            <div className="card-info__block">
+                <div className="card-info__balance">
+                    <span className="card-info__text">Баланс</span>
+                    <span className="card-info__balance-value">45000 руб.</span>
+                </div>
+                <div className="card-info__income">
+                    <span className="card-info__text">Доход</span>
+                    <span className="card-info__income-value">6000 руб.</span>
+                </div>
+                <div className="card-info__expenses">
+                    <span className="card-info__text">Затраты</span>
+                    <span className="card-info__expenses-value">1200 руб.</span>
+                </div>
+            </div>
+            <Graphyc />
         </div>
     )
 }

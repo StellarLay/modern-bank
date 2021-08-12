@@ -12,9 +12,7 @@ var Cards = (props) => {
     const cards = [
         { id: 1, balance: 250000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa, zIndex: 20 },
         { id: 2, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 19 },
-        { id: 3, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 18 },
-        { id: 4, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 17 },
-        { id: 5, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 16 }
+        { id: 3, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 18 }
     ];
 
     const sort = [
@@ -35,10 +33,15 @@ var Cards = (props) => {
     // Подгрузим баланс
     useEffect(() => { props.totalSum(totalBalance); });
 
+    // Отправим карты по иерархии выше
+    useEffect(() => { props.getCards(list) })
+
     var closeAddCard = () => { setIsAdd(false) }
     var focusedCard = (e, i) => { setId(i) }
     var clickSort = () => { isSort ? setIsSort(false) : setIsSort(true); }
     var getCardData = (value) => { setList([...list, value]); };
+
+    // Как задать стиль атрибут: style={{ zIndex: listItem.zIndex }}
 
     return (
         <div className="cards-block">
@@ -52,7 +55,7 @@ var Cards = (props) => {
                 <span className="cards-block__add-text" onClick={() => setIsAdd(true)}>Добавить новую</span>
             </div>
             <div className="cards-block__list">
-                <div className="cards-block__card" style={{ zIndex: listItem.zIndex }}>
+                <div className="cards-block__card" style={{ zIndex: 200 }}>
                     <div className="cards-block__header">
                         <span className="cards-block__name">Баланс</span>
                         <FontAwesomeIcon className="icons-card__wifi" icon={faWifi} />

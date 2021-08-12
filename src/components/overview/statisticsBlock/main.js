@@ -10,7 +10,7 @@ import Graph from './cardGraph';
 var Stats = (props) => {
     return (
         <div className="stats-block">
-            <Graph />
+            <Graph getCards={props.listCards} />
         </div>
     )
 }

@@ -20,7 +20,7 @@ li {
 }
 
 .sidebar-block {
-  width: 260px;
+  width: 220px;
   height: 100vh;
   background-image: linear-gradient(135deg, #576aca 0%, #576aca 100%);
   display: flex;
@@ -31,7 +31,8 @@ li {
 
 .sidebar__top-block,
 .sidebar__bot-block {
-  width: 90%;
+  width: 220px;
+  padding: 0 10px;
 }
 
 .sidebar-title {

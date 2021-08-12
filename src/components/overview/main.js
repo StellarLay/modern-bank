@@ -14,6 +14,7 @@ function Overview(props) {
     const [isLogin, setIsLogin] = useState(true);
     const [username, setUsername] = useState("none");
     const [balance, setBalance] = useState(0);
+    const [cardList, setCardList] = useState(null);
 
     var clickLogin = () => { setIsStatusLogin(true); }
     var openCloseLogin = (value) => { setIsStatusLogin(value); }
@@ -21,10 +22,14 @@ function Overview(props) {
     var getLoginAndPass = (username, pass) => { setUsername(username); }
     var totalBalance = (value) => { setBalance(value) }
 
+    // Передаём список карт в статы
+    const cardItems = (data) => { setCardList(data) }
+
     // Переключаем логин или кнопку
     useEffect(() => {
         if (props.statusLogin === false) { setIsLogin(false); }
     });
+
 
     return (
         <div className="overview-block">
@@ -59,9 +64,11 @@ function Overview(props) {
                 <div className="content-block">
                     <div className="balanceCard-block">
                         <Balance balance={balance} />
-                        <Cards totalSum={totalBalance} />
+                        <Cards totalSum={totalBalance} getCards={cardItems} />
                     </div>
-                    <Stats />
+                    {cardList !== null ?
+                        <Stats listCards={cardList} />
+                        : null}
                 </div>
             }
         </div>
