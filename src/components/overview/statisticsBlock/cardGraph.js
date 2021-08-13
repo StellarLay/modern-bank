@@ -65,7 +65,34 @@ var Graph = (props) => {
 
     const [selectOptions, setSelectOptions] = useState([]);
     const [currentOption, setCurrentOption] = useState([]);
+    const [currentBalance, setCurrentBalance] = useState([]);
+    const [operationData, setOperationData] = useState(null);
+    const [totalIncome, setTotalIncome] = useState(null);
+    const [totalExpenses, setTotalExpenses] = useState(null);
 
+    // Заполним массив с данными об операциях для примера
+    const loadOperData = () => {
+        let cardOperData = {
+            income: [],
+            expenses: []
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+        }
+
+        for (let i = 0; i < 7; i++) {
+            cardOperData.income[i] = getRandomInt(200, 10000);
+            cardOperData.expenses[i] = getRandomInt(200, 10000);
+        }
+
+        setOperationData(cardOperData);
+    }
+    useEffect(() => { loadOperData(); }, []);
+
+    // Загрузить статы о картах
     useEffect(() => {
         if (props.getCards.length > selectOptions.length) {
             const options = [];
@@ -78,8 +105,33 @@ var Graph = (props) => {
             }
             setSelectOptions(options);
             setCurrentOption(options[0]);
+            setCurrentBalance(props.getCards[0].balance);
+        }
+
+        // Подгружаем баланс
+        if (currentOption.length !== 0) {
+            const getCurrentNumber = currentOption.value.substr(currentOption.value.length - 4);
+            const filterArray = props.getCards.filter(i => i.number.substr(i.number.length - 4) == getCurrentNumber);
+            setCurrentBalance(filterArray[0].balance);
+        }
+
+        // Подгружаем доходы и затраты
+        if (operationData !== null) {
+            let sumIncome = operationData.income.reduce(function (sum, current) {
+                return sum + current;
+            });
+            let sumExpenses = operationData.expenses.reduce(function (sum, current) {
+                return sum + current;
+            });
+            setTotalIncome(sumIncome);
+            setTotalExpenses(sumExpenses);
         }
     });
+
+    const changeSelect = (e) => {
+        setCurrentOption(e);
+        loadOperData();
+    }
 
     return (
         <div className="graph-block">
@@ -88,7 +140,7 @@ var Graph = (props) => {
                     <h2 className="graph-block__title">Статистика для</h2>
                     <Select
                         className="select-block"
-                        onChange={setCurrentOption}
+                        onChange={(e) => changeSelect(e)}
                         styles={customStyles}
                         options={selectOptions}
                         value={currentOption}
@@ -104,18 +156,18 @@ var Graph = (props) => {
             <div className="card-info__block">
                 <div className="card-info__balance">
                     <span className="card-info__text">Баланс</span>
-                    <span className="card-info__balance-value">45000 руб.</span>
+                    <span className="card-info__balance-value">{currentBalance} руб.</span>
                 </div>
                 <div className="card-info__income">
                     <span className="card-info__text">Доход</span>
-                    <span className="card-info__income-value">6000 руб.</span>
+                    <span className="card-info__income-value">{totalIncome} руб.</span>
                 </div>
                 <div className="card-info__expenses">
                     <span className="card-info__text">Затраты</span>
-                    <span className="card-info__expenses-value">1200 руб.</span>
+                    <span className="card-info__expenses-value">{totalExpenses} руб.</span>
                 </div>
             </div>
-            <Graphyc />
+            {operationData !== null ? <Graphyc getDataOper={operationData} /> : null}
         </div>
     )
 }

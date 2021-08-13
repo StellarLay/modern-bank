@@ -1,18 +1,20 @@
 import React, { useState, useEffect, Component } from 'react';
 import '../css/graph.css';
 import { Line } from 'react-chartjs-2';
-import { AxisOptions, Chart } from "react-charts";
 
-const Graphyc = () => {
+const Graphyc = (props) => {
+    const getIncomeData = props.getDataOper.income;
+    const getExpensesData = props.getDataOper.expenses;
+
     const data = {
         labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
         datasets: [{
             label: 'Доход',
-            data: [1120, 3400, 1500, 4500, 8000, 5000, 15000],
+            data: getIncomeData,
             borderWidth: 1,
-            backgroundColor: '#acecde',
+            backgroundColor: 'rgba(84, 230, 198, 0.8)',
             fill: true,
-            borderColor: "#acecde",
+            borderColor: "rgba(84, 230, 198, 0.8)",
             pointBorderColor: "rgba(75,192,192,1)",
             pointBackgroundColor: "#acecde",
             pointBorderWidth: 3,
@@ -25,11 +27,11 @@ const Graphyc = () => {
         },
         {
             label: 'Затраты',
-            data: [15000, 4000, 7000, 14500, 8500, 9400, 1080],
+            data: getExpensesData,
             borderWidth: 1,
-            backgroundColor: 'rgba(252, 109, 144, 0.5)',
+            backgroundColor: 'rgba(252, 109, 144, 0.8)',
             fill: true,
-            borderColor: "#ffdae3",
+            borderColor: "rgba(252, 109, 144, 0.8)",
             pointBorderColor: "rgba(75,192,192,1)",
             pointBackgroundColor: "#ffdae3",
             pointBorderWidth: 3,

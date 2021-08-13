@@ -12,7 +12,7 @@ var Cards = (props) => {
     const cards = [
         { id: 1, balance: 250000, number: "4255 0102 0074 4345", validThru: "04/22", logo: visa, zIndex: 20 },
         { id: 2, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 19 },
-        { id: 3, balance: 35000, number: "4255 0102 0074 2376", validThru: "02/24", logo: mastercard, zIndex: 18 }
+        { id: 3, balance: 650000, number: "4255 0102 0074 9867", validThru: "02/24", logo: mastercard, zIndex: 18 }
     ];
 
     const sort = [
