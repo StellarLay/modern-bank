@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/modern-bank/static/css/main.24d4b92e.chunk.css",
-    "main.js": "/modern-bank/static/js/main.44aa454a.chunk.js",
-    "main.js.map": "/modern-bank/static/js/main.44aa454a.chunk.js.map",
+    "main.css": "/modern-bank/static/css/main.64d28d74.chunk.css",
+    "main.js": "/modern-bank/static/js/main.40679698.chunk.js",
+    "main.js.map": "/modern-bank/static/js/main.40679698.chunk.js.map",
     "runtime-main.js": "/modern-bank/static/js/runtime-main.27572891.js",
     "runtime-main.js.map": "/modern-bank/static/js/runtime-main.27572891.js.map",
     "static/js/2.5948a275.chunk.js": "/modern-bank/static/js/2.5948a275.chunk.js",
     "static/js/2.5948a275.chunk.js.map": "/modern-bank/static/js/2.5948a275.chunk.js.map",
     "index.html": "/modern-bank/index.html",
-    "static/css/main.24d4b92e.chunk.css.map": "/modern-bank/static/css/main.24d4b92e.chunk.css.map",
+    "static/css/main.64d28d74.chunk.css.map": "/modern-bank/static/css/main.64d28d74.chunk.css.map",
     "static/js/2.5948a275.chunk.js.LICENSE.txt": "/modern-bank/static/js/2.5948a275.chunk.js.LICENSE.txt",
     "static/media/mastercard.b720e3b5.svg": "/modern-bank/static/media/mastercard.b720e3b5.svg",
     "static/media/mir.59c0eb22.svg": "/modern-bank/static/media/mir.59c0eb22.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.27572891.js",
     "static/js/2.5948a275.chunk.js",
-    "static/css/main.24d4b92e.chunk.css",
-    "static/js/main.44aa454a.chunk.js"
+    "static/css/main.64d28d74.chunk.css",
+    "static/js/main.40679698.chunk.js"
   ]
 }
